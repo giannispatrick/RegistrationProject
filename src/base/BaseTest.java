@@ -7,20 +7,27 @@ import org.testng.annotations.AfterMethod;
 import java.io.File;
 
 public class BaseTest {
-    public WebDriver driver;
+    private static final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
+
+    protected WebDriver getDriver() {
+        return driverThreadLocal.get();
+    }
 
     @BeforeMethod
     public void setUp() {
-        driver = new ChromeDriver();
+        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         File htmlFile = new File("src/data/QA Programming Exercise.html");
         driver.get("file:///" + htmlFile.getAbsolutePath());
+        driverThreadLocal.set(driver);
     }
 
     @AfterMethod
     public void tearDown() {
+        WebDriver driver = getDriver();
         if (driver != null) {
             driver.quit();
+            driverThreadLocal.remove();
         }
     }
 }

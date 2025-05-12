@@ -10,7 +10,7 @@ public class RegistrationForm extends BaseTest {
     //Sunny day scenarios
     @Test
     public void validRegistrationPlate() {
-        CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(driver);
+        CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(getDriver());
         registrationPage.enterRegistrationPlate("ABC5555");
         registrationPage.setYearDropdown("2016");
         registrationPage.clickSubmitButton();
@@ -20,7 +20,7 @@ public class RegistrationForm extends BaseTest {
 
     @Test
     public void invalidSubmissionAndThenASuccessfulOne() {
-        CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(driver);
+        CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(getDriver());
         registrationPage.enterRegistrationPlate("ABc5555");
         registrationPage.setYearDropdown("2016");
         registrationPage.clickSubmitButton();
@@ -37,7 +37,7 @@ public class RegistrationForm extends BaseTest {
     // Rainy day scenarios
     @Test
     public void invalidRegistrationPlate_Reverted() {
-        CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(driver);
+        CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(getDriver());
         registrationPage.enterRegistrationPlate("5555XXX");
         registrationPage.setYearDropdown("2016");
         registrationPage.clickSubmitButton();
@@ -47,7 +47,7 @@ public class RegistrationForm extends BaseTest {
 
     @Test
     public void invalidRegistrationPlate_LowCap() {
-        CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(driver);
+        CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(getDriver());
         registrationPage.enterRegistrationPlate("ABc5555");
         registrationPage.setYearDropdown("2016");
         registrationPage.clickSubmitButton();
@@ -56,7 +56,7 @@ public class RegistrationForm extends BaseTest {
     }
 
     public void invalidRegistrationPlate_LettersLength() {
-        CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(driver);
+        CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(getDriver());
         registrationPage.enterRegistrationPlate("ABCC5555");
         registrationPage.setYearDropdown("2016");
         registrationPage.clickSubmitButton();
@@ -66,7 +66,7 @@ public class RegistrationForm extends BaseTest {
 
     @Test
     public void invalidRegistrationPlate_NumbersLength() {
-        CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(driver);
+        CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(getDriver());
         registrationPage.enterRegistrationPlate("ABC55555");
         registrationPage.setYearDropdown("2016");
         registrationPage.clickSubmitButton();
@@ -76,7 +76,7 @@ public class RegistrationForm extends BaseTest {
 
     @Test
     public void invalidRegistrationPlate_WithHyphen() {
-        CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(driver);
+        CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(getDriver());
         registrationPage.enterRegistrationPlate("AB-5555");
         registrationPage.setYearDropdown("2016");
         registrationPage.clickSubmitButton();
@@ -86,7 +86,7 @@ public class RegistrationForm extends BaseTest {
 
     @Test
     public void invalidRegistrationPlate_Empty() {
-        CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(driver);
+        CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(getDriver());
         registrationPage.enterRegistrationPlate("");
         registrationPage.setYearDropdown("2016");
         registrationPage.clickSubmitButton();
@@ -96,7 +96,7 @@ public class RegistrationForm extends BaseTest {
 
     @Test
     public void invalidRegistrationPlateAndDropdown_BothEmpty() {
-        CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(driver);
+        CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(getDriver());
         registrationPage.enterRegistrationPlate("");
         registrationPage.setYearDropdown("");
         registrationPage.clickSubmitButton();
@@ -106,7 +106,7 @@ public class RegistrationForm extends BaseTest {
 
     @Test
     public void invalidRegistrationDropdown_EmptyDropdown() {
-        CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(driver);
+        CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(getDriver());
         registrationPage.enterRegistrationPlate("ABC5555");
         registrationPage.setYearDropdown("");
         registrationPage.clickSubmitButton();
