@@ -7,6 +7,7 @@ import pages.CarRegistrationFormPage.CarRegistrationFormPage;
 
 public class RegistrationForm extends BaseTest {
 
+    //Sunny day scenarios
     @Test
     public void validRegistrationPlate() {
         CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(driver);
@@ -33,6 +34,7 @@ public class RegistrationForm extends BaseTest {
         registrationPage.ValidateSuccessMessage("Success! Selected XXX1234 with year 2016");
     }
 
+    // Rainy day scenarios
     @Test
     public void invalidRegistrationPlate_Reverted() {
         CarRegistrationFormPage registrationPage = new CarRegistrationFormPage(driver);
