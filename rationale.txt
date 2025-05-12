@@ -1,0 +1,6 @@
+1) I chose java in order to see how much i remember since i have been using c# for almost 5 years.
+2) i implemented a page object model even though we only have one page in order for the project to be scalable.
+3) Added parallelism for the same reason. Right now we have 10 tests but maybe in the future we are time bottlenecked.
+4) Since most rainy scenario tests are completely the same i contemplated a lot about using a data provider (something like DataRow in MSTest c#) in order to have one test for all the different inputs. I ended up doing different tests because i think its a cleaner way.
+5) I thought about doing a logging, video mechanism but i thought that was a bit overkill.
+6) Iff the elements or the methods in a page become too many we could create a new class to differentiate elements from methods 
