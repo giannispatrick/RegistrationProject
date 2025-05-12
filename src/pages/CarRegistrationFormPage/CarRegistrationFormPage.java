@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 public class CarRegistrationFormPage {
-    private final WebDriver driver;
+    private WebDriver driver;
 
     // Elements
     @FindBy(id = "input-number-plates")
